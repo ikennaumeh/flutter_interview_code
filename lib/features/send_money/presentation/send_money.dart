@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutterinterviewcode/features/home/presentation/home_screen.dart';
 import 'package:flutterinterviewcode/features/send_money/presentation/widgets/bank_page.dart';
 import 'package:flutterinterviewcode/features/send_money/presentation/widgets/custom_textfield.dart';
 import 'package:flutterinterviewcode/features/send_money/presentation/widgets/mini_card.dart';
 import 'package:flutterinterviewcode/features/send_money/presentation/widgets/new_card.dart';
 import 'package:flutterinterviewcode/features/send_money/presentation/widgets/recipient_card.dart';
-import 'package:flutterinterviewcode/features/settings/presentation/settings_screen.dart';
+
 
 
 class SendMoney extends StatelessWidget {
@@ -101,30 +100,7 @@ class SendMoney extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar:BottomAppBar(
-          color: Colors.white,
-          shape: CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(icon: SvgPicture.asset("assets/icons/home-active.svg"),onPressed: (){
-                Navigator.pushNamed(context, Home.HOME_SCREEN);
-              },),
-              IconButton(icon: SvgPicture.asset("assets/icons/wallets.svg"), onPressed: null,),
-              IconButton(icon: SvgPicture.asset("assets/icons/reports.svg"),onPressed: null,),
-              IconButton(icon: SvgPicture.asset("assets/icons/settings.svg"),onPressed: (){
-                Navigator.pushNamed(context, Settings.SETTINGS_SCREEN);
-              },),
-            ],
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          onPressed: (){},
-          child: SvgPicture.asset("assets/icons/send.svg"),
-          backgroundColor: Color(0xff613EEA),
 
-        ),
       ),
     );
   }

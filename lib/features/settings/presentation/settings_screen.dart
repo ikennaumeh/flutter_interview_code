@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutterinterviewcode/features/home/presentation/home_screen.dart';
-import 'package:flutterinterviewcode/features/send_money/presentation/send_money.dart';
+
 
 class Settings extends StatelessWidget {
   static const String SETTINGS_SCREEN = "settings";
@@ -96,32 +95,7 @@ class Settings extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar:BottomAppBar(
-        color: Colors.white,
-        shape: CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(icon: SvgPicture.asset("assets/icons/home-active.svg"),onPressed: (){
-              Navigator.pushNamed(context, Home.HOME_SCREEN);
-            },),
-            IconButton(icon: SvgPicture.asset("assets/icons/wallets.svg"),),
-            IconButton(icon: SvgPicture.asset("assets/icons/reports.svg"),),
-            IconButton(icon: SvgPicture.asset("assets/icons/settings.svg"),onPressed: (){
-              Navigator.pushNamed(context, Settings.SETTINGS_SCREEN);
-            },),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Navigator.pushNamed(context, SendMoney.SEND_MONEY_SCREEN);
-        },
-        child: SvgPicture.asset("assets/icons/send.svg"),
-        backgroundColor: Color(0xff613EEA),
 
-      ),
     );
   }
 }

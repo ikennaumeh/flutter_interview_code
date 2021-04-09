@@ -1,15 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutterinterviewcode/features/home/presentation/widgets/credit_card.dart';
-import 'package:flutterinterviewcode/features/home/presentation/widgets/search_box.dart';
 import 'package:flutterinterviewcode/features/home/presentation/widgets/sent_tab.dart';
-import 'package:flutterinterviewcode/features/send_money/presentation/send_money.dart';
-import 'package:flutterinterviewcode/features/settings/presentation/settings_screen.dart';
+
 
 class Home extends StatelessWidget {
   static const HOME_SCREEN = "home_screen";
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -24,19 +20,19 @@ class Home extends StatelessWidget {
                   height: 5.0,
                 ),
                 Padding(padding: EdgeInsets.only(left: 16.0, top: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Your Balance",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        letterSpacing: 0.2,
-                        fontSize: 14.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Your Balance",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          letterSpacing: 0.2,
+                          fontSize: 14.0,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 4.0,),
                 Padding(
@@ -58,8 +54,8 @@ class Home extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage("assets/images/profile.jpg")
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("assets/images/profile.jpg")
                               ),
                             ),
                           ),
@@ -86,12 +82,12 @@ class Home extends StatelessWidget {
                 Container(
                   height: 165,
                   child: ListView(
-                    scrollDirection: Axis.horizontal,
-                     children: [
-                       CreditCard(colors: [Color(0xff54D3AD),Color(0xff63E2BC),],),
-                       CreditCard(colors: [Color(0xff8676FB),Color(0xffAB7BFF),],),
-                       CreditCard(colors: [Color(0xffF5A25F),Color(0xffFAA865),],),
-                     ]
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        CreditCard(colors: [Color(0xff54D3AD),Color(0xff63E2BC),],),
+                        CreditCard(colors: [Color(0xff8676FB),Color(0xffAB7BFF),],),
+                        CreditCard(colors: [Color(0xffF5A25F),Color(0xffFAA865),],),
+                      ]
 
                   ),
                 ),
@@ -133,37 +129,11 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar:BottomAppBar(
-          color: Colors.white,
-          shape: CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(icon: SvgPicture.asset("assets/icons/home-active.svg"),),
-              IconButton(icon: SvgPicture.asset("assets/icons/wallets.svg"),),
-              IconButton(icon: SvgPicture.asset("assets/icons/reports.svg"),),
-              IconButton(icon: SvgPicture.asset("assets/icons/settings.svg"),onPressed: (){
-                Navigator.pushNamed(context, Settings.SETTINGS_SCREEN);
-              },),
-            ],
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              Navigator.pushNamed(context, SendMoney.SEND_MONEY_SCREEN);
-            },
-            child: SvgPicture.asset("assets/icons/send.svg"),
-            backgroundColor: Color(0xff613EEA),
 
-        ),
       ),
     );
   }
 }
-
-
-
 
 
 
